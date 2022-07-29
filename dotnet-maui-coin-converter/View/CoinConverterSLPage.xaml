@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dotnet_maui_coin_converter.View.CoinConverterSLPage"
+             Title="CoinConverterSLPage">
+    <StackLayout Margin="15" Padding="5" Spacing="15">
+
+       
+        <Label  
+                Text="Value to convert"
+                VerticalOptions="Center"
+                FontSize="Medium"/>
+        <Editor Placeholder="eg. 200"
+                Text="{Binding ValueFrom}"
+                FontSize="28"
+                Keyboard="Numeric"></Editor>
+
+
+        <Label  Text="Select a coin"
+                VerticalOptions="Center"
+                FontSize="Medium"/>
+
+        <Picker Title="ie. USD"
+                ItemsSource="{Binding Coins}"
+                FontSize="28"
+                SelectedItem="{Binding CoinFrom}">
+        </Picker>
+
+        <Label  Text="Select a destination coin"
+                VerticalOptions="Center"
+                FontSize="Medium"/>
+
+
+        <Picker Title="ie. BTC"
+                ItemsSource="{Binding Coins}"
+                FontSize="28"
+                SelectedItem="{Binding CoinTo}"/>
+
+        <Button 
+                x:Name="ConvertBtn"
+                Text="Convert"
+                SemanticProperties.Hint="Go to Coin converter"
+                Command="{Binding ConvertCommand}"/>
+
+        <Frame BorderColor="Black"
+               Padding="5">
+            <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                <Entry Text="{Binding ValueTo}"
+                       FontSize="28"
+                       IsReadOnly="true"></Entry>
+                <Label 
+                        Text="{Binding CoinTo}"
+                        VerticalOptions="Center"
+                        FontSize="28"/>
+            </StackLayout>
+        </Frame>
+
+
+
+
+
+
+    </StackLayout>
+</ContentPage>

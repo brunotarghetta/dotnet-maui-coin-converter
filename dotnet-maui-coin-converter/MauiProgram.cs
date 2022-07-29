@@ -15,7 +15,8 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+                fonts.AddFont("fa_solid.ttf", "FontAwesome");
+            });
 
         builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
         
@@ -24,7 +25,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
 
         builder.Services.AddTransient<CoinConverterViewModel>();
-        builder.Services.AddTransient<CoinConverterPage>();
+        builder.Services.AddTransient<CoinConverterSLPage>();
 
 
         return builder.Build();

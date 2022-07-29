@@ -14,7 +14,7 @@ namespace dotnet_maui_coin_converter.ViewModel
         [ICommand]
         async Task OpenCoinConverter(string s)
         {
-            await Shell.Current.GoToAsync($"{nameof(CoinConverterPage)}");
+            await Shell.Current.GoToAsync($"{nameof(CoinConverterSLPage)}");
         }
     }
 }

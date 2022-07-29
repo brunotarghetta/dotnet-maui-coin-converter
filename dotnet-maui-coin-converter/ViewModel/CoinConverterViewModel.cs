@@ -54,7 +54,7 @@ namespace dotnet_maui_coin_converter.ViewModel
 
             var exchangeRate = await coinConverterService.GetExchangeRate(CoinFrom,CoinTo);
 
-            ValueTo =Math.Round( exchangeRate * valueFrom,5);
+            ValueTo =Math.Round( exchangeRate * valueFrom,8);
 
         }
     }

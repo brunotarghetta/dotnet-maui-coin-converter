@@ -4,11 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:dotnet_maui_coin_converter"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:localview="clr-namespace:dotnet_maui_coin_converter.View"
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Home" FlyoutIcon="{StaticResource IconOne}">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="OnePage" />
+    </FlyoutItem>
+   
+    <FlyoutItem Title="Coin Converter" FlyoutIcon="{StaticResource IconTwo}">
+        <ShellContent
+            Title="Coin Converter"
+            ContentTemplate="{DataTemplate localview:CoinConverterSLPage}"
+            Route="TwoPage" />
+    </FlyoutItem>
 
 </Shell>

@@ -8,6 +8,6 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-        Routing.RegisterRoute(nameof(CoinConverterPage), typeof(CoinConverterPage));
+        Routing.RegisterRoute(nameof(CoinConverterSLPage), typeof(CoinConverterSLPage));
     }
 }
