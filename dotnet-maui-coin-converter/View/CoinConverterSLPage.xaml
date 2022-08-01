@@ -10,7 +10,7 @@
                 Text="Value to convert"
                 VerticalOptions="Center"
                 FontSize="Medium"/>
-        <Editor Placeholder="eg. 200"
+        <Editor Placeholder="{Binding EditorPlaceholderValueFrom}"
                 Text="{Binding ValueFrom}"
                 FontSize="28"
                 Keyboard="Numeric"></Editor>
@@ -20,7 +20,7 @@
                 VerticalOptions="Center"
                 FontSize="Medium"/>
 
-        <Picker Title="ie. USD"
+        <Picker Title="{Binding PickerTextCoins}"
                 ItemsSource="{Binding Coins}"
                 FontSize="28"
                 SelectedItem="{Binding CoinFrom}">
@@ -31,7 +31,7 @@
                 FontSize="Medium"/>
 
 
-        <Picker Title="ie. BTC"
+        <Picker Title="{Binding PickerTextCoins}"
                 ItemsSource="{Binding Coins}"
                 FontSize="28"
                 SelectedItem="{Binding CoinTo}"/>

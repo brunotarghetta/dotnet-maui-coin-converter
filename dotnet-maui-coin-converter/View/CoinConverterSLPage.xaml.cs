@@ -1,4 +1,5 @@
 using dotnet_maui_coin_converter.ViewModel;
+using Microsoft.Maui.Platform;
 
 namespace dotnet_maui_coin_converter.View;
 
@@ -8,6 +9,8 @@ public partial class CoinConverterSLPage : ContentPage
     {
         InitializeComponent();
         BindingContext = viewModel;
-
     }
+
+
+    
 }

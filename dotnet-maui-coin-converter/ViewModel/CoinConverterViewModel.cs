@@ -30,16 +30,40 @@ namespace dotnet_maui_coin_converter.ViewModel
         [ObservableProperty]
         decimal valueTo;
 
+        [ObservableProperty]
+        string pickerTextCoins;
+
+        [ObservableProperty]
+        string editorPlaceholderValueFrom;
+
         IConnectivity connectivity;
 
         CoinConverterService coinConverterService;
 
+        private bool IsAndroid() => DeviceInfo.Current.Platform == DevicePlatform.Android;
+
+        private bool IsWinUI() => DeviceInfo.Current.Platform == DevicePlatform.WinUI;
 
         public CoinConverterViewModel(IConnectivity connectivity, CoinConverterService coinConverterService)
         {
             coins = new List<string> { "USD", "BTC", "ETH" };
             this.connectivity = connectivity;
             this.coinConverterService = coinConverterService;
+            SetPickerText();
+        }
+
+        private void SetPickerText()
+        {
+            if (IsAndroid())
+            {
+                pickerTextCoins = "ie. USD";
+                EditorPlaceholderValueFrom = "ie. USD";
+            }
+            else if (IsWinUI())
+            {
+                pickerTextCoins = String.Empty;
+                editorPlaceholderValueFrom = String.Empty;
+            }
         }
 
         [ICommand]
