@@ -14,7 +14,7 @@ namespace dotnet_maui_coin_converter.Service
         public async Task<decimal> GetExchangeRate(string coinFrom, string coinTo)
         {
             ExchangeRate exchangeRate = new ExchangeRate();
-            var response = await httpClient.GetAsync($"https://rest.coinapi.io/v1/exchangerate/{coinFrom}/{coinTo}?apikey=CF6BECE5-D367-4395-A73B-2ED42C3D047C");
+            var response = await httpClient.GetAsync($"https://rest.coinapi.io/v1/exchangerate/{coinFrom}/{coinTo}?apikey=7B576B5F-59CC-4A29-B11E-061623809166");
             if (response.IsSuccessStatusCode)
             {
                 exchangeRate = await response.Content.ReadFromJsonAsync<ExchangeRate>();
